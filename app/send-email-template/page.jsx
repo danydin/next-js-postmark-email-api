@@ -6,9 +6,9 @@ export default function sendEmail(){
     const[name, setName] = useState('')
     const[age, setAge] = useState('')
     
-    async function sendEmail(){
+    async function sendEmailTemplate(){
         try {
-            await fetch ('/api/send-template-email', {
+            await fetch ('/api/send-email-template', {
                 method: 'POST',
                 headers: {
                 'Content-Type': 'application/json'
@@ -31,22 +31,20 @@ export default function sendEmail(){
                 </div>
 
                 <div className="mb-4">
-                    <label className="block text-gray-700 text-sm font-bold mb-2">Subject</label>
+                    <label className="block text-gray-700 text-sm font-bold mb-2">Name</label>
                     <input 
                         className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                         type="text" 
-                        id="subject"
                         value={name}
                         onChange={(e) => setName(e.target.value)}
                     />
                 </div>
 
                 <div className="mb-6">
-                    <label className="block text-gray-700 text-sm font-bold mb-2">Body</label>
+                    <label className="block text-gray-700 text-sm font-bold mb-2">Age</label>
                     <input 
                         className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                         type="text" 
-                        id="body"
                         value={age}
                         onChange={(e) => setAge(e.target.value)}
                     />
@@ -55,9 +53,9 @@ export default function sendEmail(){
                 <div className="text-center">
                     <button
                         className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-                        onClick={sendEmail}
+                        onClick={sendEmailTemplate}
                     >
-                        Send Email
+                        Send Email Template
                     </button>
                 </div>
             </div>

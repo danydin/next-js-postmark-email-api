@@ -5,11 +5,13 @@ export async function POST(data){
     const {name, age} = res;
     // console.log({subject, body})
     client.sendEmailWithTemplate({
-        "TemplateModel": 
+        "TemplateId": 34156289,
         "From": 'dbara.a12138118@umak.edu.ph',
         "To": 'dbara.a12138118@umak.edu.ph',
-        : name,
-        "Textbody": age
+        "TemplateModel": {
+            "name": name,
+            "age": age
+        }    
     })
     return Response.json({res})
 }
